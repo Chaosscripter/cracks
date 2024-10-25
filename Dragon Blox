@@ -1,0 +1,3151 @@
+pcall(function()
+if game.PlaceId == 3177438863 then  -- World 1
+repeat task.wait() until game:IsLoaded()
+
+	local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Orion%20Library%202")))()
+	
+	OrionLib:MakeNotification({Name = "Dragon Blox!", Content = "Scripted By Riotscripter!", Image = "rbxassetid://4483345998", Time = 5})
+	
+	local Window = OrionLib:MakeWindow({Name = "Riotscripter | Dragon Blox [" .. os.date("%Y") .. "]", HidePremium = false, SaveConfig = false, ConfigFolder = "Dragon Blox", IntroEnabled = true, IntroText = "Welcome To Riotscripter's Dragon Blox Gui."})
+
+	local JirenCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain10_JigrayArea.HumanoidRootPart.CFrame
+	local FriezaCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain2_PurizaArea.HumanoidRootPart.CFrame
+	local CoolerCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain3_CoolestArea.HumanoidRootPart.CFrame
+	local AndroidCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain4_Droid1718Area.HumanoidRootPart.CFrame
+	local CellCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain5_AtomArea.HumanoidRootPart.CFrame
+	local BuuCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain6_JinbuArea.HumanoidRootPart.CFrame
+	local BVegetaCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain7_VeggyArea.HumanoidRootPart.CFrame
+	local GokuBCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain8_BlackKarrotArea.HumanoidRootPart.CFrame
+	local BrolyCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCMain9_BrawlyArea.HumanoidRootPart.CFrame
+	local SpawnCF = game:GetService("Workspace").Misc.SpawnTP.CFrame
+	local BossFolder = game:GetService("Workspace")["World Mobs"]["Boss Mobs"]
+	local LocalPlayer = game:GetService("Players").LocalPlayer
+	local Character = LocalPlayer.Character
+	function BringBosses()
+		local characterRootPart = Character.HumanoidRootPart
+		pcall(function()
+			for i, v in pairs(BossFolder:GetChildren()) do
+				if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+					v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+					local targetPosition = v:FindFirstChild("HumanoidRootPart")
+					v:FindFirstChild("HumanoidRootPart").Anchored = true
+					v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+				end
+			end
+		end)
+	end
+
+	-- local mytable
+	local MyTable = {
+		["AutoClick"] = false,
+		["AutoTechnique"] = false,
+		["AutoRebirth"] = false,
+		["AutoPrestige"] = false,
+		["AutoSpin"] = false,
+		["CollectOrbs"] = false,
+	}
+
+	--Bool Values
+	getgenv().AutoClick = false
+	getgenv().AutoTechnique = false
+	getgenv().AutoRebirth = false
+	getgenv().AutoPrestige = false
+        getgenv().AutoSpin = false
+	getgenv().CollectOrbs = false
+
+	--functions
+	function autoclick()
+		while getgenv().AutoClick == true do game:GetService("RunService").PreRender:Wait()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(7127.94629, 767.564453, -10080.8477, 0.694443047, -0.578470528, 0.427926153, -1.49011612e-08, 0.594715476, 0.803936243, -0.719547749, -0.558287919, 0.412995994),
+					["SkillId"] = "1",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(7110.30518, 731.7995, -10097.873, 0.694442809, -0.578470588, 0.427926362, -1.5264499e-08, 0.594715595, 0.803936183, -0.719547927, -0.55828768, 0.412995934),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(7087.04296875, 570.9751586914062, -10246.6572265625)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+
+		end
+	end
+
+	function autokaioken()
+		while getgenv().AutoTechnique == true do game:GetService("RunService").PreRender:Wait()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(7162.78076, 577.245361, -10076.1436, 0.978101611, -0.0278607626, 0.206254631, 1.86264471e-09, 0.990999818, 0.133863702, -0.208127826, -0.130932301, 0.969298542),
+					["SkillId"] = "8",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(7160.42285, 574.155029, -10087.2246, -0.815149486, 7.46256779e-10, -0.579250693, -3.31721992e-08, 1, 4.79698308e-08, 0.579250693, 5.83176032e-08, -0.815149486),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(6835.04150390625, 625.083984375, -10243.125)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	end
+
+	function autorebirth()
+		while getgenv().AutoRebirth == true do game:GetService("RunService").PreRender:Wait()
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("StatsService"):WaitForChild("RE"):WaitForChild("RebirthUp"):FireServer()
+		end
+	end
+	
+	function autoprestige()
+		while getgenv().AutoPrestige == true do
+			game:GetService("RunService").PreRender:Wait()
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("StatsService"):WaitForChild("RE"):WaitForChild("RebirthUp"):FireServer()
+		end
+	end	
+
+	function collectorbs()
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		local Workspace = game:GetService("Workspace")
+		while getgenv().CollectOrbs == true do RunService.RenderStepped:Wait()
+			local OldCFrame = Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			local orbPart = Workspace:FindFirstChild("Orbs", true):FindFirstChildWhichIsA("Part", true)
+			if orbPart then Players.LocalPlayer.Character.HumanoidRootPart.CFrame = orbPart.CFrame RunService.PreRender:Wait(0.5)
+			end
+			for i, obj in pairs(Workspace:GetDescendants()) do
+				if obj:IsA("Damage Tester Platform") and obj.Name == "Orbs" then
+					fireproximityprompt(obj)
+					task.wait(0.5)
+				end
+			end Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OldCFrame
+			task.wait(1)
+		end
+	end
+
+    function autospin()
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		local Workspace = game:GetService("Workspace")
+		while getgenv().AutoSpin == true do RunService.RenderStepped:Wait()
+			local args = {
+    [1] = "SpinMain"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.LootPoolService.RF.SpinRequest:InvokeServer(unpack(args))
+end
+end
+
+	local Tab = Window:MakeTab({
+		Name = "AutoFarm",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Autofarm Stuff (Rejoin to Undo)"
+	})
+	Tab:AddToggle({
+		Name = "AutoClick (Fast)",
+		Default = false,
+		Save = true,
+		Flag = "autoclick_db",
+		Callback = function(Value)
+			getgenv().AutoClick = Value
+			autoclick()
+		end    
+	})
+	Tab:AddToggle({
+		Name = "Auto Rebirth",
+		Default = false,
+		Save = true,
+		Flag = "autorebirth_db",
+		Callback = function(Value)
+			getgenv().AutoRebirth = Value
+			autorebirth()
+		end    
+	})
+    Tab:AddToggle({
+		Name = "Auto Prestige",
+		Default = false,
+		Save = true,
+		Flag = "autoprestige_db",
+		Callback = function(Value)
+			getgenv().AutoPrestige = Value
+			autoprestige()
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Kaioken/Technique",
+		Default = false,
+		Save = true,
+		Flag = "autotechnique_db",
+		Callback = function(Value)
+			getgenv().AutoTechnique = Value
+			autokaioken()
+		end    
+	})   
+	Tab:AddButton({
+		Name = "Activate Fusion",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(505.849609375, 532.1817626953125, -273.2228698730469, 0.7330472469329834, 0.2303532361984253, -0.6399837732315063, 0, 0.9409066438674927, 0.3386662006378174, 0.6801778078079224, -0.2482583224773407, 0.6897289752960205),
+					["SkillId"] = "9",
+					["Toggle"] = true,
+					["Began"] = true,
+					["CFrame"] = CFrame.new(515.38427734375, 525.2232055664062, -283.4986267089844, 0.7330472469329834, 0.23035308718681335, -0.6399837732315063, 8.378681748411054e-09, 0.9409066438674927, 0.33866602182388306, 0.6801777482032776, -0.24825820326805115, 0.6897290349006653),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(547.3834838867188, 508.2899169921875, -317.9850769042969)
+				}
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddButton({
+		Name = "Deactivate Fusion",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(6821.3193359375, 600.5535278320312, -5704.1142578125, -0.8402402400970459, 0.2904592454433441, -0.4578534662723541, 0, 0.8444141149520874, 0.5356907844543457, 0.5422143936157227, 0.45010894536972046, -0.7095106840133667),
+					["SkillId"] = "9",
+					["Toggle"] = false,
+					["Began"] = true,
+					["CFrame"] = CFrame.new(6828.79248046875, 589.6781005859375, -5692.533203125, -0.8402402997016907, 0.29045918583869934, -0.4578533172607422, -3.3579297564756416e-08, 0.8444141149520874, 0.53569096326828, 0.5422141551971436, 0.4501091539859772, -0.7095108032226562),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(6851.68505859375, 562.8935546875, -5657.0576171875)
+				}
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Grab Orbs [:(]",
+		Default = false,
+		Save = true,
+		Flag = "collectorbs_db",
+		Callback = function(Value)
+			getgenv().CollectOrbs = Value
+			collectorbs()
+		end    
+	})
+	Tab:AddButton({
+		Name = "Activate/Deactivate Sprint",
+		Callback = function()
+			game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.FlightService.RE.Sprint:FireServer()
+		end
+	})
+	Tab:AddButton({
+		Name = "Transform/Untransform",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(-562.398681640625, 33.95891571044922, 1284.1322021484375, 0.9779377579689026, 0.037740930914878845, -0.20545881986618042, 2.574675139754845e-09, 0.983544111251831, 0.1806681901216507, 0.20889638364315033, -0.176682248711586, 0.9618449807167053),
+					["SkillId"] = "10",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(-559.8304443359375, 29.900562286376953, 1272.109130859375, 0.5774960517883301, -3.05407810152758e-10, -0.8163934946060181, 2.232960760739644e-10, 1, -2.1613988376856241e-10, 0.8163934946060181, -5.747752968021658e-11, 0.5774960517883301),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(-519.0107421875, 29.900562286376953, 1243.234375)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs",
+		Default = false,
+		Save = true,
+		Flag = "automobs_db",
+		Callback = function(Value)
+			getgenv().bringmobs = Value
+			while bringmobs and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+							game:GetService("RunService").PreRender:Wait(.2)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 2",
+		Default = false,
+		Save = true,
+		Flag = "automobs2_db",
+		Callback = function(Value)
+			getgenv().bringmobs2 = Value
+			while bringmobs and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 0, -3)
+							game:GetService("RunService").PreRender:Wait(.2)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 3",
+		Default = false,
+		Save = true,
+		Flag = "automobs3_db",
+		Callback = function(Value)
+			getgenv().bringmobs3 = Value
+			while bringmobs3 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 4",
+		Default = false,
+		Save = true,
+		Flag = "automobs4_db",
+		Callback = function(Value)
+			getgenv().bringmobs4 = Value
+			while bringmobs4 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 5",
+		Default = false,
+		Save = true,
+		Flag = "automobs5_db",
+		Callback = function(Value)
+			getgenv().bringmobs5 = Value
+			while bringmobs5 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses",
+		Default = false,
+		Save = true,
+		Flag = "autobosses_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss and game:GetService("RunService").PreRender:Wait() do
+				BringBosses()
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 2",
+		Default = false,
+		Save = true,
+		Flag = "autobosses2_db",
+		Callback = function(Value)
+			getgenv().BringBoss2 = Value
+			while BringBoss2 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 3",
+		Default = false,
+		Save = true,
+		Flag = "autobosses3_db",
+		Callback = function(Value)
+			getgenv().BringBoss3 = Value
+			while BringBoss3 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 4",
+		Default = false,
+		Save = true,
+		Flag = "autobosses4_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss4 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 5",
+		Default = false,
+		Save = true,
+		Flag = "autobosses5_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss5 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses = Value
+			while getgenv().AutoMobsBosses and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 2",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses2_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses2 = Value
+			while getgenv().AutoMobsBosses2 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 3",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses3_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses3 = Value
+			while getgenv().AutoMobsBosses3 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 4",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses4_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses4 = Value
+			while getgenv().AutoMobsBosses4 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 0, -3)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 5",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses5_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses5 = Value
+			while getgenv().AutoMobsBosses5 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+					end
+				end
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Enable Gamepasses (Visual!)",
+		Callback = function()
+			for i, v in ipairs(game:GetService("Players").LocalPlayer.Stats.GamePasses:GetChildren()) do
+				v.Value = true
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Disable Gamepasses (Visual!)",
+		Callback = function()
+			for i, v in ipairs(game:GetService("Players").LocalPlayer.Stats.GamePasses:GetChildren()) do
+				v.Value = false
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Infinite Yield",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Infinite%20Yield"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Infinite Yield 2",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Infinite%20Yield%202"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Nameless Admin",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Nameless%20Admin"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Remote Spy",
+		Callback = function()
+			loadstring(game:HttpGet(("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/SimpleSpyWare%20V3%20Source"), true))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Old Dex",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/DarkDexExplorer"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Dragon Blox Gui",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Dragon%20Blox%20Gui"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice Hub V1",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V1"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice hub V2",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V2"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice hub V3",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V3"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Nameless Hub Dragon Blox :Key 123 (Skidded)",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Nameless%20Hub%20Dragon%20Blox"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Demonic Hub V2 (Has Key System!)",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Demonic%20Hub%20V2"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Keyboard",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Mobile%20Keyboard", true))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Server Hop",
+		Callback = function()
+			game:GetService("TeleportService"):Teleport(3177438863, game:GetService("Players").LocalPlayer);
+		end         
+	})  
+	Tab:AddButton({
+		Name = "Server Hop To Dead Server",
+		Callback =  function()
+			local Http = game:GetService("HttpService")
+			local TPS = game:GetService("TeleportService")
+			local Api = "https://games.roblox.com/v1/games/"
+
+			local _place = game.PlaceId
+			local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+			function ListServers(cursor)
+				local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+				return Http:JSONDecode(Raw)
+			end
+
+			local Server, Next; repeat
+				local Servers = ListServers(Next)
+				Server = Servers.data[1]
+				Next = Servers.nextPageCursor
+			until Server
+
+			TPS:TeleportToPlaceInstance(_place,Server.id,game:GetService("Players").LocalPlayer)
+		end
+	})
+	Tab:AddButton({
+		Name = "Server Hop If You Die",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.Humanoid.Died:Connect(function()
+				local x = {}
+				for i, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+					if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+						x[#x + 1] = v.id
+					end
+				end
+				if #x > 0 then
+					game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+				else
+					print("Server not found.")
+				end
+			end)
+		end
+	})
+	Tab:AddButton({
+		Name = "Leave Server",
+		Callback = function()
+			game:Shutdown();
+		end        
+	})
+	Tab:AddButton({
+		Name = "Rejoin Server",
+		Callback = function()
+			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+		end    
+	})
+	Tab:AddButton({
+		Name = "Unload Gui",
+		Callback = function()
+			OrionLib:Destroy()
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Teleports",
+		Icon = "http://www.roblox.com/asset/?id=4335489011",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Click the Buttons to Teleport"
+	})
+	Tab:AddButton({
+		Name = "Jiren Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = JirenCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Frieza Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = FriezaCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Coolest Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = CoolerCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Androids Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = AndroidCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Cell Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = CellCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Majin Buu Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = BuuCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Baby Vegeta Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = BVegetaCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Goku Black Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = GokuBCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Broly Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = BrolyCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Mobs Quest",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1428.71729, 589.68103, -2959.39966, -0.197385594, 3.75241243e-08, -0.980325937, 1.59155693e-08, 1, 3.50726417e-08, 0.980325937, -8.67961081e-09, -0.197385594)
+		end
+	})
+	Tab:AddButton({
+		Name = "Spawn",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = SpawnCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Quest Board",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1373.15442, 598.714233, -2792.40356, -0.842817366, -3.27753713e-10, -0.538199723, -6.98626268e-10, 1, 4.85062712e-10, 0.538199723, 7.84819709e-10, -0.842817366)
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Codes",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false,
+	})
+	Tab:AddTextbox({
+		Name = "Codes (Redeem!)",
+		Default = "",
+		TextDisappear = false,
+		Callback = function(Value)
+			local args = {
+				[1] = {
+					["UniqueTag"] = "RedeemCode",
+					["InputText"] = Value,
+					["InputType"] = "Text",
+					["LeftButton"] = "Redeem",
+					["Description"] = "Redeem Code",
+					["Prompt"] = "RedeemCode",
+					["RightButton"] = "Cancel",
+					["Title"] = "Codes"
+				},
+				[2] = "Redeem"
+			}
+			game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.PromptService.RE.Prompt:FireServer(unpack(args))
+		end
+	})
+	Tab:AddButton({
+		Name = "World Teleporter",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1308.73767, 590.966797, -2994.11597, -0.242444679, -5.55411894e-08, -0.970165253, -3.81573484e-09, 1, -5.62956508e-08, 0.970165253, -9.94668792e-09, -0.242444679)
+		end
+	})
+	Tab:AddButton({
+		Name = "Ocean",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2078, 589, 1744)
+		end
+	})
+	Tab:AddButton({
+		Name = "Piccolo",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1276.79102, 591.04303, -2915.26123, -0.940263867, 3.25475753e-08, 0.5 - 0.340446591, 6.62011104e-08, 1, -8.72352217e-08, 0.340446591, -1.04562069e-07, -0.940263867)
+		end
+	})
+	Tab:AddButton({
+		Name = "Tutorial",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1978.27039, -67.7249374, 2282.25049, 1, 1.42251464e-08, -1.01907381e-13, -1.42251464e-08, 1, -2.78698717e-08, 1.01510929e-13, 2.78698717e-08, 1)
+		end
+	})
+	Tab:AddButton({
+		Name = "Premium Fusion (Requires Roblox Premium)",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1369.20447, 590.932251, -2870.10815, -0.419576734, 1.09318696e-08, -0.907719851, -9.90776439e-09, 1, 1.66229004e-08, 0.907719851, 1.59680571e-08, -0.419576734)
+		end
+	})
+	Tab:AddButton({
+		Name = "Vegeta Fusion",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-639.25415, 988.875061, -2697.02563, -0.0209753737, -5.05985343e-09, 0.999779999, -2.22242824e-09, 1, 5.0143405e-09, -0.999779999, -2.11676165e-09, -0.0209753737)
+		end
+	})
+	Tab:AddButton({
+		Name = "Goku Fusion",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2417.25415, 569.399048, -4974.60449, 0.98227036, -1.31336657e-08, -0.187469915, 2.13354454e-08, 1, 4.17320862e-08, 0.187469915, -4.49919462e-08, 0.98227036)
+		end
+	})
+	Tab:AddButton({
+		Name = "Mecha Raid",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2764.01343, 598.989624, -6492.21436, 0.997432649, 1.88816851e-09, -0.0716105923, 2.3148734e-09, 1, 5.86100271e-08, 0.0716105923, -5.8625325e-08, 0.997432649)
+		end
+	})
+	Tab:AddButton({
+		Name = "Mecha Raid Inside",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2805.22241, 573.055237, -6989.87402, 0.989533603, -1.73532921e-08, -0.144302592, 1.54452433e-08, 1, -1.43428176e-08, 0.144302592, 1.19639116e-08, 0.989533603)
+		end
+	})
+	Tab:AddButton({
+		Name = "Time Chamber (Level 5 + 50% Training EXP)",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28188.0254, 54.286644, -2644.19238, -0.00779592944, 4.64385614e-08, 0.999969602, 6.16235241e-09, 1, -4.63919285e-08, -0.999969602, 5.80049697e-09, -0.00779592944)
+		end    
+	})
+	Tab:AddButton({
+		Name = "Capsule (Level 20 + 100% Training EXP)",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(25933.0488, 446.589325, -4120.10205, 0.98922354, 2.50064165e-08, -0.146413088, -2.24419168e-08, 1, 1.91673042e-08, 0.146413088, -1.56749582e-08, 0.98922354)
+		end    
+	})
+	Tab:AddButton({
+		Name = "Korin Tower (Level 30 + 200% Training EXP)",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6558.76318, 3787.12451, 4357.94336, -0.349907011, 8.62320917e-08, -0.936784446, 4.44311148e-08, 1, 7.54552829e-08, 0.936784446, -1.52200457e-08, -0.349907011)
+		end    
+	})
+	Tab:AddButton({
+		Name = "King Kai's Planet (Level 50 + 300% Training EXP)",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28280.0625, 14.8307877, -5253.89648)
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Worlds",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Click The Button To Be Teleported To That World"
+	})
+	Tab:AddButton({
+		Name = "Main World",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(3177438863)
+		end
+	})
+	Tab:AddButton({
+		Name = "Crimson Planet (Level 100 Required)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7040546583)
+		end
+	})
+	Tab:AddButton({
+		Name = "Planet Droid (Level 200 Required)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7888441249)
+		end
+	})
+	Tab:AddButton({
+		Name = "World Of Tournament (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7379325123)
+		end
+	})
+	Tab:AddButton({
+		Name = "Battlegrounds (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(14516089806)
+		end
+	})
+	Tab:AddButton({
+		Name = "AFK World (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(18501029209)
+		end
+	})
+	Tab:AddButton({
+		Name = "Trade Hub (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(18408422178)
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Anti's",
+		Icon = "http://www.roblox.com/asset/?id=7734056608",
+		PremiumOnly = false
+	})     
+	Tab:AddToggle({
+		Name = "Anti Game Admins",
+		Default = false,
+		Save = true,
+		Flag = "antiadmins_db",
+		Callback = function(bool)
+			antiAdmins = bool
+			if bool == true then
+				game.Players.PlayerAdded:Connect(function(Plr)
+					if Plr:GetRankInGroup(3481335) and 2 <= Plr:GetRankInGroup(3481335) and antiAdmins then
+						game:GetService("Players").LocalPlayer:Kick("Admin/High Rank Player Detected")
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Anti Kick/Ban",
+		Default = false,
+		Save = true,
+		Flag = "antikick_db",
+		Callback = function(Value)
+			AntiKick = Value
+			while AntiKick do
+				for i,v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetDescendants()) do
+					if v.Name == "ErrorPrompt" then
+						game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+					end
+				end
+				game:GetService("RunService").PreRender:Wait()
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Anti Afk",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Anti%20Afk"))();
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Esp",
+		Icon = "http://www.roblox.com/asset/?id=7733674079",
+		PremiumOnly = false
+	})
+	Tab:AddButton({
+		Name = "Esp Players",
+		Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/iRFj1ZfR"),true))();
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Credits",
+		Icon = "http://www.roblox.com/asset/?id=4370318685",
+		PremiumOnly = false
+	})
+	Tab:AddLabel("Script is made by Riotscripter, Join the discord for support")  
+	Tab:AddButton({
+		Name = "Discord",
+		Callback = function()
+			setclipboard("https://discord.com/invite/EuHsTbKWhS")
+		end         
+	})
+	Tab:AddButton({
+		Name = "Youtube",
+		Callback = function()
+			setclipboard("https://m.youtube.com/channel/UCvXEiClhdiICCgSVzkEIT3A")
+		end
+	})
+	Tab:AddButton({
+		Name = "Github",
+		Callback = function()
+			setclipboard("https://github.com/Riotscripter")
+		end
+	})
+	Tab:AddBind({
+		Name = "UI Toggle Keybind", 
+		Default = Enum.KeyCode.RightShift, 
+		Hold = false, 
+		Callback = function()
+			print("press")
+		end    
+	})
+elseif game.PlaceId == 7040546583 then -- World 2
+repeat task.wait() until game:IsLoaded()
+
+	local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Orion%20Library%202")))()
+
+	OrionLib:MakeNotification({Name = "Dragon Blox!", Content = "Scripted By Riotscripter!", Image = "rbxassetid://4483345998", Time = 5})
+
+	local Window = OrionLib:MakeWindow({Name = "Riotscripter | Dragon Blox [" .. os.date("%Y") .. "]", HidePremium = false, SaveConfig = false, ConfigFolder = "Dragon Blox", IntroEnabled = true, IntroText = "Welcome To Riotscripter's Dragon Blox Gui."})
+
+	local GordoCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCCrimson1.HumanoidRootPart.CFrame
+	local CalciCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCCrimson2.HumanoidRootPart.CFrame
+	local TruffleCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCCrimson3.HumanoidRootPart.CFrame
+	local JanembaCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCCrimson4.HumanoidRootPart.CFrame
+	local ElManoCF = game:GetService("Workspace").Misc.NPC.Quests.QuestNPCCrimson5.HumanoidRootPart.CFrame
+	local spawn2CF = game:GetService("Workspace").Misc.SpawnTP.CFrame
+	local BossFolder = game:GetService("Workspace")["World Mobs"]["Boss Mobs"]
+	local LocalPlayer = game:GetService("Players").LocalPlayer
+	local Character = LocalPlayer.Character
+	function BringBosses()
+		local characterRootPart = Character.HumanoidRootPart
+		pcall(function()
+			for i, v in pairs(BossFolder:GetChildren()) do
+				if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+					v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+					local targetPosition = v:FindFirstChild("HumanoidRootPart")
+					v:FindFirstChild("HumanoidRootPart").Anchored = true
+					v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+				end
+			end
+		end)
+	end
+
+	-- local mytable
+	local MyTable = {
+		["AutoClick"] = false,
+		["AutoTechnique"] = false,
+		["AutoRebirth"] = false,
+		["AutoPrestige"] = false,
+		["AutoSpin"] = false,
+		["CollectOrbs"] = false,
+	}
+
+	--Bool Values
+	getgenv().AutoClick = false
+	getgenv().AutoTechnique = false
+	getgenv().AutoRebirth = false
+	getgenv().AutoPrestige = false
+        getgenv().AutoSpin = false
+	getgenv().CollectOrbs = false
+
+	--functions
+	function autoclick()
+		while getgenv().AutoClick == true do game:GetService("RunService").PreRender:Wait()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(7127.94629, 767.564453, -10080.8477, 0.694443047, -0.578470528, 0.427926153, -1.49011612e-08, 0.594715476, 0.803936243, -0.719547749, -0.558287919, 0.412995994),
+					["SkillId"] = "1",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(7110.30518, 731.7995, -10097.873, 0.694442809, -0.578470588, 0.427926362, -1.5264499e-08, 0.594715595, 0.803936183, -0.719547927, -0.55828768, 0.412995934),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(7087.04296875, 570.9751586914062, -10246.6572265625)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+
+		end
+	end
+
+	function autokaioken()
+		while getgenv().AutoTechnique == true do game:GetService("RunService").PreRender:Wait()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(7162.78076, 577.245361, -10076.1436, 0.978101611, -0.0278607626, 0.206254631, 1.86264471e-09, 0.990999818, 0.133863702, -0.208127826, -0.130932301, 0.969298542),
+					["SkillId"] = "8",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(7160.42285, 574.155029, -10087.2246, -0.815149486, 7.46256779e-10, -0.579250693, -3.31721992e-08, 1, 4.79698308e-08, 0.579250693, 5.83176032e-08, -0.815149486),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(6835.04150390625, 625.083984375, -10243.125)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	end
+
+	function autorebirth()
+		while getgenv().AutoRebirth == true do game:GetService("RunService").PreRender:Wait()
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("StatsService"):WaitForChild("RE"):WaitForChild("RebirthUp"):FireServer()
+		end
+	end
+	
+	function autoprestige()
+		while getgenv().AutoPrestige == true do
+			game:GetService("RunService").PreRender:Wait()
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("StatsService"):WaitForChild("RE"):WaitForChild("RebirthUp"):FireServer()
+		end
+	end	
+
+	function collectorbs()
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		local Workspace = game:GetService("Workspace")
+		while getgenv().CollectOrbs == true do RunService.RenderStepped:Wait()
+			local OldCFrame = Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			local orbPart = Workspace:FindFirstChild("Orbs", true):FindFirstChildWhichIsA("Part", true)
+			if orbPart then Players.LocalPlayer.Character.HumanoidRootPart.CFrame = orbPart.CFrame RunService.PreRender:Wait(0.5)
+			end
+			for i, obj in pairs(Workspace:GetDescendants()) do
+				if obj:IsA("Damage Tester Platform") and obj.Name == "Orbs" then
+					fireproximityprompt(obj)
+					task.wait(0.5)
+				end
+			end Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OldCFrame
+			task.wait(1)
+		end
+	end
+
+    function autospin()
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		local Workspace = game:GetService("Workspace")
+		while getgenv().AutoSpin == true do RunService.RenderStepped:Wait()
+			local args = {
+    [1] = "SpinMain"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.LootPoolService.RF.SpinRequest:InvokeServer(unpack(args))
+end
+end
+
+	local Tab = Window:MakeTab({
+		Name = "AutoFarm",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Autofarm Stuff (Rejoin to Undo)"
+	})
+	Tab:AddToggle({
+		Name = "AutoClick (Fast)",
+		Default = false,
+		Save = true,
+		Flag = "autoclick_db",
+		Callback = function(Value)
+			getgenv().AutoClick = Value
+			autoclick()
+		end    
+	})
+	Tab:AddToggle({
+		Name = "Auto Rebirth",
+		Default = false,
+		Save = true,
+		Flag = "autorebirth_db",
+		Callback = function(Value)
+			getgenv().AutoRebirth = Value
+			autorebirth()
+		end    
+	})
+    Tab:AddToggle({
+		Name = "Auto Prestige",
+		Default = false,
+		Save = true,
+		Flag = "autoprestige_db",
+		Callback = function(Value)
+			getgenv().AutoPrestige = Value
+			autoprestige()
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Kaioken/Technique",
+		Default = false,
+		Save = true,
+		Flag = "autotechnique_db",
+		Callback = function(Value)
+			getgenv().AutoTechnique = Value
+			autokaioken()
+		end    
+	})   
+	Tab:AddButton({
+		Name = "Activate Fusion",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(505.849609375, 532.1817626953125, -273.2228698730469, 0.7330472469329834, 0.2303532361984253, -0.6399837732315063, 0, 0.9409066438674927, 0.3386662006378174, 0.6801778078079224, -0.2482583224773407, 0.6897289752960205),
+					["SkillId"] = "9",
+					["Toggle"] = true,
+					["Began"] = true,
+					["CFrame"] = CFrame.new(515.38427734375, 525.2232055664062, -283.4986267089844, 0.7330472469329834, 0.23035308718681335, -0.6399837732315063, 8.378681748411054e-09, 0.9409066438674927, 0.33866602182388306, 0.6801777482032776, -0.24825820326805115, 0.6897290349006653),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(547.3834838867188, 508.2899169921875, -317.9850769042969)
+				}
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddButton({
+		Name = "Deactivate Fusion",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(6821.3193359375, 600.5535278320312, -5704.1142578125, -0.8402402400970459, 0.2904592454433441, -0.4578534662723541, 0, 0.8444141149520874, 0.5356907844543457, 0.5422143936157227, 0.45010894536972046, -0.7095106840133667),
+					["SkillId"] = "9",
+					["Toggle"] = false,
+					["Began"] = true,
+					["CFrame"] = CFrame.new(6828.79248046875, 589.6781005859375, -5692.533203125, -0.8402402997016907, 0.29045918583869934, -0.4578533172607422, -3.3579297564756416e-08, 0.8444141149520874, 0.53569096326828, 0.5422141551971436, 0.4501091539859772, -0.7095108032226562),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(6851.68505859375, 562.8935546875, -5657.0576171875)
+				}
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Grab Orbs [:(]",
+		Default = false,
+		Save = true,
+		Flag = "collectorbs_db",
+		Callback = function(Value)
+			getgenv().CollectOrbs = Value
+			collectorbs()
+		end    
+	})
+	Tab:AddButton({
+		Name = "Activate/Deactivate Sprint",
+		Callback = function()
+			game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.FlightService.RE.Sprint:FireServer()
+		end
+	})
+	Tab:AddButton({
+		Name = "Transform/Untransform",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(-562.398681640625, 33.95891571044922, 1284.1322021484375, 0.9779377579689026, 0.037740930914878845, -0.20545881986618042, 2.574675139754845e-09, 0.983544111251831, 0.1806681901216507, 0.20889638364315033, -0.176682248711586, 0.9618449807167053),
+					["SkillId"] = "10",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(-559.8304443359375, 29.900562286376953, 1272.109130859375, 0.5774960517883301, -3.05407810152758e-10, -0.8163934946060181, 2.232960760739644e-10, 1, -2.1613988376856241e-10, 0.8163934946060181, -5.747752968021658e-11, 0.5774960517883301),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(-519.0107421875, 29.900562286376953, 1243.234375)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs",
+		Default = false,
+		Save = true,
+		Flag = "automobs_db",
+		Callback = function(Value)
+			getgenv().bringmobs = Value
+			while bringmobs and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+							game:GetService("RunService").PreRender:Wait(.2)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 2",
+		Default = false,
+		Save = true,
+		Flag = "automobs2_db",
+		Callback = function(Value)
+			getgenv().bringmobs2 = Value
+			while bringmobs and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 0, -3)
+							game:GetService("RunService").PreRender:Wait(.2)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 3",
+		Default = false,
+		Save = true,
+		Flag = "automobs3_db",
+		Callback = function(Value)
+			getgenv().bringmobs3 = Value
+			while bringmobs3 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 4",
+		Default = false,
+		Save = true,
+		Flag = "automobs4_db",
+		Callback = function(Value)
+			getgenv().bringmobs4 = Value
+			while bringmobs4 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 5",
+		Default = false,
+		Save = true,
+		Flag = "automobs5_db",
+		Callback = function(Value)
+			getgenv().bringmobs5 = Value
+			while bringmobs5 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses",
+		Default = false,
+		Save = true,
+		Flag = "autobosses_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss and game:GetService("RunService").PreRender:Wait() do
+				BringBosses()
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 2",
+		Default = false,
+		Save = true,
+		Flag = "autobosses2_db",
+		Callback = function(Value)
+			getgenv().BringBoss2 = Value
+			while BringBoss2 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 3",
+		Default = false,
+		Save = true,
+		Flag = "autobosses3_db",
+		Callback = function(Value)
+			getgenv().BringBoss3 = Value
+			while BringBoss3 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 4",
+		Default = false,
+		Save = true,
+		Flag = "autobosses4_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss4 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 5",
+		Default = false,
+		Save = true,
+		Flag = "autobosses5_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss5 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses = Value
+			while getgenv().AutoMobsBosses and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 2",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses2_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses2 = Value
+			while getgenv().AutoMobsBosses2 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 3",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses3_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses3 = Value
+			while getgenv().AutoMobsBosses3 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 4",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses4_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses4 = Value
+			while getgenv().AutoMobsBosses4 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 0, -3)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 5",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses5_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses5 = Value
+			while getgenv().AutoMobsBosses5 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+					end
+				end
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Enable Gamepasses (Visual!)",
+		Callback = function()
+			for i, v in ipairs(game:GetService("Players").LocalPlayer.Stats.GamePasses:GetChildren()) do
+				v.Value = true
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Disable Gamepasses (Visual!)",
+		Callback = function()
+			for i, v in ipairs(game:GetService("Players").LocalPlayer.Stats.GamePasses:GetChildren()) do
+				v.Value = false
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Infinite Yield",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Infinite%20Yield"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Infinite Yield 2",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Infinite%20Yield%202"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Nameless Admin",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Nameless%20Admin"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Remote Spy",
+		Callback = function()
+			loadstring(game:HttpGet(("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/SimpleSpyWare%20V3%20Source"), true))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Old Dex",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/DarkDexExplorer"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Dragon Blox Gui",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Dragon%20Blox%20Gui"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice Hub V1",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V1"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice hub V2",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V2"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice hub V3",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V3"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Nameless Hub Dragon Blox :Key 123 (Skidded)",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Nameless%20Hub%20Dragon%20Blox"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Demonic Hub V2 (Has Key System!)",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Demonic%20Hub%20V2"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Keyboard",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Mobile%20Keyboard", true))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Server Hop",
+		Callback = function()
+			game:GetService("TeleportService"):Teleport(3177438863, game:GetService("Players").LocalPlayer);
+		end         
+	})  
+	Tab:AddButton({
+		Name = "Server Hop To Dead Server",
+		Callback =  function()
+			local Http = game:GetService("HttpService")
+			local TPS = game:GetService("TeleportService")
+			local Api = "https://games.roblox.com/v1/games/"
+
+			local _place = game.PlaceId
+			local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+			function ListServers(cursor)
+				local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+				return Http:JSONDecode(Raw)
+			end
+
+			local Server, Next; repeat
+				local Servers = ListServers(Next)
+				Server = Servers.data[1]
+				Next = Servers.nextPageCursor
+			until Server
+
+			TPS:TeleportToPlaceInstance(_place,Server.id,game:GetService("Players").LocalPlayer)
+		end
+	})
+	Tab:AddButton({
+		Name = "Server Hop If You Die",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.Humanoid.Died:Connect(function()
+				local x = {}
+				for i, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+					if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+						x[#x + 1] = v.id
+					end
+				end
+				if #x > 0 then
+					game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+				else
+					print("Server not found.")
+				end
+			end)
+		end
+	})
+	Tab:AddButton({
+		Name = "Leave Server",
+		Callback = function()
+			game:Shutdown();
+		end        
+	})
+	Tab:AddButton({
+		Name = "Rejoin Server",
+		Callback = function()
+			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+		end    
+	})
+	Tab:AddButton({
+		Name = "Unload Gui",
+		Callback = function()
+			OrionLib:Destroy()
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Teleports",
+		Icon = "http://www.roblox.com/asset/?id=4335489011",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Click the Buttons to Teleport"
+	})
+	Tab:AddButton({
+		Name = "Gordo Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = GordoCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Calci Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = CalciCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Elmano Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = ElManoCF
+		end
+	})
+	Tab:AddButton({
+		Name = "Truffle Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = TruffleCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Nemba Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = JanembaCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Vegeta Ultra Ego Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			local VegetaCF = game:GetService("Workspace").Misc.NPC.UltraTechniqueVeggyGiver.HumanoidRootPart.CFrame
+			Humrootpart.CFrame = VegetaCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Auto Boss Quest",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1612.92554, 29.0021057, 9.33809376, -0.302410066, -5.23488453e-08, 0.953177929, -7.96204631e-08, 1, 2.9659537e-08, -0.953177929, -6.69231213e-08, -0.302410066)
+			wait(1)
+			local args = {
+				[1] = "NPCQuest_Crimson1",
+				[2] = 7,
+				[3] = workspace:WaitForChild("Misc"):WaitForChild("NPC"):WaitForChild("Quests"):WaitForChild("QuestNPCCrimson1")
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("DialogService"):WaitForChild("RF"):WaitForChild("Answer"):InvokeServer(unpack(args))
+			wait(3)
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-703.99707, 28.0022964, -1520.17322, 0.995067596, 1.80953619e-09, -0.0991992429, -2.33845565e-09, 1, -5.21561772e-09, 0.0991992429, 5.42186518e-09, 0.995067596)
+			wait(1)
+			local args = {				
+				[1] = "NPCQuest_Crimson2",
+				[2] = 7,
+				[3] = workspace:WaitForChild("Misc"):WaitForChild("NPC"):WaitForChild("Quests"):WaitForChild("QuestNPCCrimson2")
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("DialogService"):WaitForChild("RF"):WaitForChild("Answer"):InvokeServer(unpack(args))
+			wait(3)
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-597.735352, 29.0005608, 1402.03992, -0.941396952, 2.97611913e-09, -0.337300658, -1.93518179e-08, 1, 6.28337418e-08, 0.337300658, 6.56788757e-08, -0.941396952)
+			wait(1)
+			local args = {
+				[1] = "NPCQuest_Crimson3",
+				[2] = 7,
+				[3] = workspace:WaitForChild("Misc"):WaitForChild("NPC"):WaitForChild("Quests"):WaitForChild("QuestNPCCrimson2")
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("DialogService"):WaitForChild("RF"):WaitForChild("Answer"):InvokeServer(unpack(args))
+			wait(3)
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(633.701233, 30.2036629, -1889.7218, 0.976427794, -3.25158211e-08, -0.215844303, 4.24728626e-08, 1, 4.1492239e-08, 0.215844303, -4.96817023e-08, 0.976427794)
+			wait(1)
+			local args = {
+				[1] = "NPCQuest_Crimson4",
+				[2] = 7,
+				[3] = workspace:WaitForChild("Misc"):WaitForChild("NPC"):WaitForChild("Quests"):WaitForChild("QuestNPCCrimson2")
+			}
+			wait(3)
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-349.466278, 560.796997, -256.743774, -0.0392561369, 6.95256972e-08, 0.999229193, 4.09517753e-09, 1, -6.94184479e-08, -0.999229193, 1.3669208e-09, -0.0392561369)
+			wait(1)
+			local args = {
+				[1] = "NPCQuest_Crimson5",
+				[2] = 2,
+				[3] = workspace:WaitForChild("Misc"):WaitForChild("NPC"):WaitForChild("Quests"):WaitForChild("QuestNPCCrimson5")
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("DialogService"):WaitForChild("RF"):WaitForChild("Answer"):InvokeServer(unpack(args))
+			wait(2)
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-403.66864, 891.726318, -3416.4375, -0.904513776, -0.392282546, 0.167239904, 2.58962967e-08, 0.392172813, 0.919891536, -0.426444352, 0.832054615, -0.)
+		end
+	})
+	Tab:AddButton({
+		Name = "Quest Board",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-248.452576, 33.5995407, -13.9475241, 0.856153429, -6.21586409e-08, 33.5995, 7.15102786e-08, 1, 1.80923532e-09, -0.516721725, 3.54019321e-08, 0.856153429)
+		end
+	})
+	Tab:AddButton({
+		Name = "World Teleporter",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-266.618866, 33.4995346, 79.0342484, -0.616952956, 3.93932638e-08, 1 / 20.78700006, 5.72333221e-08, 1, -5.18805443e-09, -0.78700006, 4.18418402e-08, -0.616952956)
+		end
+	})
+	Tab:AddButton({
+		Name = "Spawn",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = spawn2CF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Destroyer Planet Buff (Level 150 + 500% Training EXP)",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-460.342468, 721.318359, -3312.09106, 0.406636566, -1.9139728e-08, 0.913590014, -1.29848465e-09, 1, 2.15279705e-08, -0.913590014, -9.94034277e-09, 0.406636566)
+		end    
+	})
+	Tab:AddButton({
+		Name = "Sacred Island (Level 100 + 400% Training EXP)",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-405.131439, 340.101257, 4825.9917, 0.993643582, 1.04513722e-08, -0.112572022, -1.11410348e-08, 1, -5.49732926e-09, 0.112572022, 6.71655487e-09, 0.993643582)
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Worlds",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Click The Button To Be Teleported To That World"
+	})
+	Tab:AddButton({
+		Name = "Main World",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(3177438863)
+		end
+	})
+	Tab:AddButton({
+		Name = "Crimson Planet (Level 100 Required)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7040546583)
+		end
+	})
+	Tab:AddButton({
+		Name = "Planet Droid (Level 200 Required)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7888441249)
+		end
+	})
+	Tab:AddButton({
+		Name = "World Of Tournament (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7379325123)
+		end
+	})
+	Tab:AddButton({
+		Name = "Battlegrounds (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(14516089806)
+		end
+	})
+	Tab:AddButton({
+		Name = "AFK World (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(18501029209)
+		end
+	})
+	Tab:AddButton({
+		Name = "Trade Hub (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(18408422178)
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Anti's",
+		Icon = "http://www.roblox.com/asset/?id=7734056608",
+		PremiumOnly = false
+	})     
+	Tab:AddToggle({
+		Name = "Anti Game Admins",
+		Default = false,
+		Save = true,
+		Flag = "antiadmins_db",
+		Callback = function(bool)
+			antiAdmins = bool
+			if bool == true then
+				game.Players.PlayerAdded:Connect(function(Plr)
+					if Plr:GetRankInGroup(3481335) and 2 <= Plr:GetRankInGroup(3481335) and antiAdmins then
+						game:GetService("Players").LocalPlayer:Kick("Admin/High Rank Player Detected")
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Anti Kick/Ban",
+		Default = false,
+		Save = true,
+		Flag = "antikick_db",
+		Callback = function(Value)
+			AntiKick = Value
+			while AntiKick do
+				for i,v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetDescendants()) do
+					if v.Name == "ErrorPrompt" then
+						game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+					end
+				end
+				game:GetService("RunService").PreRender:Wait()
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Anti Afk",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Anti%20Afk"))();
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Esp",
+		Icon = "http://www.roblox.com/asset/?id=7733674079",
+		PremiumOnly = false
+	})
+	Tab:AddButton({
+		Name = "Esp Players",
+		Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/iRFj1ZfR"),true))();
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Credits",
+		Icon = "http://www.roblox.com/asset/?id=4370318685",
+		PremiumOnly = false
+	})
+	Tab:AddLabel("Script is made by Riotscripter, Join the discord for support")  
+	Tab:AddButton({
+		Name = "Discord",
+		Callback = function()
+			setclipboard("https://discord.com/invite/EuHsTbKWhS")
+		end         
+	})
+	Tab:AddButton({
+		Name = "Youtube",
+		Callback = function()
+			setclipboard("https://m.youtube.com/channel/UCvXEiClhdiICCgSVzkEIT3A")
+		end
+	})
+	Tab:AddButton({
+		Name = "Github",
+		Callback = function()
+			setclipboard("https://github.com/Riotscripter")
+		end
+	})
+	Tab:AddBind({
+		Name = "UI Toggle Keybind", 
+		Default = Enum.KeyCode.RightShift, 
+		Hold = false, 
+		Callback = function()
+			print("press")
+		end    
+	})
+elseif game.PlaceId == 7888441249 then -- World 3
+repeat task.wait() until game:IsLoaded()
+
+	local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Orion%20Library%202")))()
+
+	OrionLib:MakeNotification({Name = "Dragon Blox!", Content = "Scripted By Riotscripter!", Image = "rbxassetid://4483345998", Time = 5})
+
+	local Window = OrionLib:MakeWindow({Name = "Riotscripter | Dragon Blox [" .. os.date("%Y") .. "]", HidePremium = false, SaveConfig = false, ConfigFolder = "Dragon Blox", IntroEnabled = true, IntroText = "Welcome To Riotscripter's Dragon Blox Gui."})
+
+	local FriezaX003CF = game:GetService("Workspace").Misc.NPC.Quest.QuestNPCDroid1_PurizaX003.HumanoidRootPart.CFrame
+	local CellX002CF = game:GetService("Workspace").Misc.NPC.Quest.QuestNPCDroid2_AtomX002.HumanoidRootPart.CFrame
+	local BrolyX01CF = game:GetService("Workspace").Misc.NPC.Quest.QuestNPCDroid3_BrawlyX01.HumanoidRootPart.CFrame
+	local JirenXCF = game:GetService("Workspace").Misc.NPC.Quest.QuestNPCDroid4_JigrayX.HumanoidRootPart.CFrame
+	local spawn3CF = game:GetService("Workspace").Misc.SpawnTP.CFrame
+	local BossFolder = game:GetService("Workspace")["World Mobs"]["Boss Mobs"]
+	local LocalPlayer = game:GetService("Players").LocalPlayer
+	local Character = LocalPlayer.Character
+	function BringBosses()
+		local characterRootPart = Character.HumanoidRootPart
+		pcall(function()
+			for i, v in pairs(BossFolder:GetChildren()) do
+				if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+					v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+					local targetPosition = v:FindFirstChild("HumanoidRootPart")
+					v:FindFirstChild("HumanoidRootPart").Anchored = true
+					v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+				end
+			end
+		end)
+	end
+
+	-- local mytable
+	local MyTable = {
+		["AutoClick"] = false,
+		["AutoTechnique"] = false,
+		["AutoRebirth"] = false,
+		["AutoPrestige"] = false,
+		["AutoSpin"] = false,
+		["CollectOrbs"] = false,
+	}
+
+	--Bool Values
+	getgenv().AutoClick = false
+	getgenv().AutoTechnique = false
+	getgenv().AutoRebirth = false
+	getgenv().AutoPrestige = false
+        getgenv().AutoSpin = false
+	getgenv().CollectOrbs = false
+
+	--functions
+	function autoclick()
+		while getgenv().AutoClick == true do game:GetService("RunService").PreRender:Wait()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(7127.94629, 767.564453, -10080.8477, 0.694443047, -0.578470528, 0.427926153, -1.49011612e-08, 0.594715476, 0.803936243, -0.719547749, -0.558287919, 0.412995994),
+					["SkillId"] = "1",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(7110.30518, 731.7995, -10097.873, 0.694442809, -0.578470588, 0.427926362, -1.5264499e-08, 0.594715595, 0.803936183, -0.719547927, -0.55828768, 0.412995934),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(7087.04296875, 570.9751586914062, -10246.6572265625)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+
+		end
+	end
+
+	function autokaioken()
+		while getgenv().AutoTechnique == true do game:GetService("RunService").PreRender:Wait()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(7162.78076, 577.245361, -10076.1436, 0.978101611, -0.0278607626, 0.206254631, 1.86264471e-09, 0.990999818, 0.133863702, -0.208127826, -0.130932301, 0.969298542),
+					["SkillId"] = "8",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(7160.42285, 574.155029, -10087.2246, -0.815149486, 7.46256779e-10, -0.579250693, -3.31721992e-08, 1, 4.79698308e-08, 0.579250693, 5.83176032e-08, -0.815149486),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(6835.04150390625, 625.083984375, -10243.125)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	end
+
+	function autorebirth()
+		while getgenv().AutoRebirth == true do game:GetService("RunService").PreRender:Wait()
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("StatsService"):WaitForChild("RE"):WaitForChild("RebirthUp"):FireServer()
+		end
+	end
+	
+	function autoprestige()
+		while getgenv().AutoPrestige == true do
+			game:GetService("RunService").PreRender:Wait()
+			game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("StatsService"):WaitForChild("RE"):WaitForChild("RebirthUp"):FireServer()
+		end
+	end	
+
+	function collectorbs()
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		local Workspace = game:GetService("Workspace")
+		while getgenv().CollectOrbs == true do RunService.RenderStepped:Wait()
+			local OldCFrame = Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			local orbPart = Workspace:FindFirstChild("Orbs", true):FindFirstChildWhichIsA("Part", true)
+			if orbPart then Players.LocalPlayer.Character.HumanoidRootPart.CFrame = orbPart.CFrame RunService.PreRender:Wait(0.5)
+			end
+			for i, obj in pairs(Workspace:GetDescendants()) do
+				if obj:IsA("Damage Tester Platform") and obj.Name == "Orbs" then
+					fireproximityprompt(obj)
+					task.wait(0.5)
+				end
+			end Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OldCFrame
+			task.wait(1)
+		end
+	end
+
+    function autospin()
+		local Players = game:GetService("Players")
+		local RunService = game:GetService("RunService")
+		local Workspace = game:GetService("Workspace")
+		while getgenv().AutoSpin == true do RunService.RenderStepped:Wait()
+			local args = {
+    [1] = "SpinMain"
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.LootPoolService.RF.SpinRequest:InvokeServer(unpack(args))
+end
+end
+
+	local Tab = Window:MakeTab({
+		Name = "AutoFarm",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Autofarm Stuff (Rejoin to Undo)"
+	})
+	Tab:AddToggle({
+		Name = "AutoClick (Fast)",
+		Default = false,
+		Save = true,
+		Flag = "autoclick_db",
+		Callback = function(Value)
+			getgenv().AutoClick = Value
+			autoclick()
+		end    
+	})
+	Tab:AddToggle({
+		Name = "Auto Rebirth",
+		Default = false,
+		Save = true,
+		Flag = "autorebirth_db",
+		Callback = function(Value)
+			getgenv().AutoRebirth = Value
+			autorebirth()
+		end    
+	})
+    Tab:AddToggle({
+		Name = "Auto Prestige",
+		Default = false,
+		Save = true,
+		Flag = "autoprestige_db",
+		Callback = function(Value)
+			getgenv().AutoPrestige = Value
+			autoprestige()
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Kaioken/Technique",
+		Default = false,
+		Save = true,
+		Flag = "autotechnique_db",
+		Callback = function(Value)
+			getgenv().AutoTechnique = Value
+			autokaioken()
+		end    
+	})   
+	Tab:AddButton({
+		Name = "Activate Fusion",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(505.849609375, 532.1817626953125, -273.2228698730469, 0.7330472469329834, 0.2303532361984253, -0.6399837732315063, 0, 0.9409066438674927, 0.3386662006378174, 0.6801778078079224, -0.2482583224773407, 0.6897289752960205),
+					["SkillId"] = "9",
+					["Toggle"] = true,
+					["Began"] = true,
+					["CFrame"] = CFrame.new(515.38427734375, 525.2232055664062, -283.4986267089844, 0.7330472469329834, 0.23035308718681335, -0.6399837732315063, 8.378681748411054e-09, 0.9409066438674927, 0.33866602182388306, 0.6801777482032776, -0.24825820326805115, 0.6897290349006653),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(547.3834838867188, 508.2899169921875, -317.9850769042969)
+				}
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddButton({
+		Name = "Deactivate Fusion",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(6821.3193359375, 600.5535278320312, -5704.1142578125, -0.8402402400970459, 0.2904592454433441, -0.4578534662723541, 0, 0.8444141149520874, 0.5356907844543457, 0.5422143936157227, 0.45010894536972046, -0.7095106840133667),
+					["SkillId"] = "9",
+					["Toggle"] = false,
+					["Began"] = true,
+					["CFrame"] = CFrame.new(6828.79248046875, 589.6781005859375, -5692.533203125, -0.8402402997016907, 0.29045918583869934, -0.4578533172607422, -3.3579297564756416e-08, 0.8444141149520874, 0.53569096326828, 0.5422141551971436, 0.4501091539859772, -0.7095108032226562),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(6851.68505859375, 562.8935546875, -5657.0576171875)
+				}
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Grab Orbs [:(]",
+		Default = false,
+		Save = true,
+		Flag = "collectorbs_db",
+		Callback = function(Value)
+			getgenv().CollectOrbs = Value
+			collectorbs()
+		end    
+	})
+	Tab:AddButton({
+		Name = "Activate/Deactivate Sprint",
+		Callback = function()
+			game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.FlightService.RE.Sprint:FireServer()
+		end
+	})
+	Tab:AddButton({
+		Name = "Transform/Untransform",
+		Callback = function()
+			local args = {
+				[1] = {
+					["Camera"] = CFrame.new(-562.398681640625, 33.95891571044922, 1284.1322021484375, 0.9779377579689026, 0.037740930914878845, -0.20545881986618042, 2.574675139754845e-09, 0.983544111251831, 0.1806681901216507, 0.20889638364315033, -0.176682248711586, 0.9618449807167053),
+					["SkillId"] = "10",
+					["Began"] = true,
+					["CFrame"] = CFrame.new(-559.8304443359375, 29.900562286376953, 1272.109130859375, 0.5774960517883301, -3.05407810152758e-10, -0.8163934946060181, 2.232960760739644e-10, 1, -2.1613988376856241e-10, 0.8163934946060181, -5.747752968021658e-11, 0.5774960517883301),
+					["Typ\208\181"] = 1,
+					["Aim"] = Vector3.new(-519.0107421875, 29.900562286376953, 1243.234375)
+				}
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SkillRemote"):FireServer(unpack(args))
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs",
+		Default = false,
+		Save = true,
+		Flag = "automobs_db",
+		Callback = function(Value)
+			getgenv().bringmobs = Value
+			while bringmobs and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+							game:GetService("RunService").PreRender:Wait(.2)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 2",
+		Default = false,
+		Save = true,
+		Flag = "automobs2_db",
+		Callback = function(Value)
+			getgenv().bringmobs2 = Value
+			while bringmobs and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 0, -3)
+							game:GetService("RunService").PreRender:Wait(.2)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 3",
+		Default = false,
+		Save = true,
+		Flag = "automobs3_db",
+		Callback = function(Value)
+			getgenv().bringmobs3 = Value
+			while bringmobs3 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 4",
+		Default = false,
+		Save = true,
+		Flag = "automobs4_db",
+		Callback = function(Value)
+			getgenv().bringmobs4 = Value
+			while bringmobs4 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs 5",
+		Default = false,
+		Save = true,
+		Flag = "automobs5_db",
+		Callback = function(Value)
+			getgenv().bringmobs5 = Value
+			while bringmobs5 and game:GetService("RunService").PreRender:Wait(.2) do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"].Mobs:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses",
+		Default = false,
+		Save = true,
+		Flag = "autobosses_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss and game:GetService("RunService").PreRender:Wait() do
+				BringBosses()
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 2",
+		Default = false,
+		Save = true,
+		Flag = "autobosses2_db",
+		Callback = function(Value)
+			getgenv().BringBoss2 = Value
+			while BringBoss2 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 3",
+		Default = false,
+		Save = true,
+		Flag = "autobosses3_db",
+		Callback = function(Value)
+			getgenv().BringBoss3 = Value
+			while BringBoss3 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 4",
+		Default = false,
+		Save = true,
+		Flag = "autobosses4_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss4 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+							v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Bosses 5",
+		Default = false,
+		Save = true,
+		Flag = "autobosses5_db",
+		Callback = function(Value)
+			getgenv().BringBoss = Value
+			while BringBoss5 and game:GetService("RunService").PreRender:Wait() do
+				pcall(function()
+					for i, v in next, game:GetService("Workspace")["World Mobs"]["Boss Mobs"]:GetChildren() do
+						if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") then
+							v:FindFirstChild("HumanoidRootPart").Anchored = true
+							v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+						end
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses = Value
+			while getgenv().AutoMobsBosses and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(3, 0, 0)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 2",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses2_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses2 = Value
+			while getgenv().AutoMobsBosses2 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -3)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 3",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses3_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses3 = Value
+			while getgenv().AutoMobsBosses3 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(3, 0, 0)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 4",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses4_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses4 = Value
+			while getgenv().AutoMobsBosses4 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 0, -3)
+					end
+				end
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Auto Mobs & Bosses 5",
+		Default = false,
+		Save = true,
+		Flag = "automobsbosses5_db",
+		Callback = function(Value)
+			getgenv().AutoMobsBosses5 = Value
+			while getgenv().AutoMobsBosses5 and game:GetService("RunService").PreRender:Wait() do
+				local merge = function(...)
+					local new = {}
+					for i, v in next, {...} do 
+						for i2, v2 in next, v do 
+							table.insert(new, v2) 
+						end 
+					end
+					return new
+				end
+
+				for i, v in next, merge(workspace["World Mobs"].Mobs:GetChildren(), workspace["World Mobs"]["Boss Mobs"]:GetChildren()) do
+					if v.Name ~= "Tutorial Dummy" and v:FindFirstChild("HumanoidRootPart") and 
+						v:FindFirstChildWhichIsA("Humanoid") and v:FindFirstChildWhichIsA("Humanoid").Health ~= 0 then
+						v:FindFirstChild("HumanoidRootPart").Anchored = true
+						v:FindFirstChild("HumanoidRootPart").Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position
+					end
+				end
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Enable Gamepasses (Visual!)",
+		Callback = function()
+			for i, v in ipairs(game:GetService("Players").LocalPlayer.Stats.GamePasses:GetChildren()) do
+				v.Value = true
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Disable Gamepasses (Visual!)",
+		Callback = function()
+			for i, v in ipairs(game:GetService("Players").LocalPlayer.Stats.GamePasses:GetChildren()) do
+				v.Value = false
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Infinite Yield",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Infinite%20Yield"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Infinite Yield 2",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Infinite%20Yield%202"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Nameless Admin",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Nameless%20Admin"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Remote Spy",
+		Callback = function()
+			loadstring(game:HttpGet(("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/SimpleSpyWare%20V3%20Source"), true))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Old Dex",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/DarkDexExplorer"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Dragon Blox Gui",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Dragon%20Blox%20Gui"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice Hub V1",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V1"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice hub V2",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V2"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Rice hub V3",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Rice%20hub%20V3"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Nameless Hub Dragon Blox :Key 123 (Skidded)",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Nameless%20Hub%20Dragon%20Blox"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Demonic Hub V2 (Has Key System!)",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Demonic%20Hub%20V2"))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Keyboard",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Mobile%20Keyboard", true))();
+		end
+	})
+	Tab:AddButton({
+		Name = "Server Hop",
+		Callback = function()
+			game:GetService("TeleportService"):Teleport(3177438863, game:GetService("Players").LocalPlayer);
+		end         
+	})  
+	Tab:AddButton({
+		Name = "Server Hop To Dead Server",
+		Callback =  function()
+			local Http = game:GetService("HttpService")
+			local TPS = game:GetService("TeleportService")
+			local Api = "https://games.roblox.com/v1/games/"
+
+			local _place = game.PlaceId
+			local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+			function ListServers(cursor)
+				local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+				return Http:JSONDecode(Raw)
+			end
+
+			local Server, Next; repeat
+				local Servers = ListServers(Next)
+				Server = Servers.data[1]
+				Next = Servers.nextPageCursor
+			until Server
+
+			TPS:TeleportToPlaceInstance(_place,Server.id,game:GetService("Players").LocalPlayer)
+		end
+	})
+	Tab:AddButton({
+		Name = "Server Hop If You Die",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.Humanoid.Died:Connect(function()
+				local x = {}
+				for i, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+					if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+						x[#x + 1] = v.id
+					end
+				end
+				if #x > 0 then
+					game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+				else
+					print("Server not found.")
+				end
+			end)
+		end
+	})
+	Tab:AddButton({
+		Name = "Leave Server",
+		Callback = function()
+			game:Shutdown();
+		end        
+	})
+	Tab:AddButton({
+		Name = "Rejoin Server",
+		Callback = function()
+			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+		end    
+	})
+	Tab:AddButton({
+		Name = "Unload Gui",
+		Callback = function()
+			OrionLib:Destroy()
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Teleports",
+		Icon = "http://www.roblox.com/asset/?id=4335489011",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Click the Buttons to Teleport"
+	})
+	Tab:AddButton({
+		Name = "FriezaX003 Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = FriezaX003CF
+		end    
+	})
+	Tab:AddButton({
+		Name = "CellX002 Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = CellX002CF
+		end    
+	})
+	Tab:AddButton({
+		Name = "BrolyX01 Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = BrolyX01CF
+		end    
+	})
+	Tab:AddButton({
+		Name = "JirenX Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = JirenXCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Zero Quest",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-225.86319, 12.8980427, -8040.78467, 0.999801457, 3.73196833e-08, -0.0199272353, -3.50454243e-08, 1, 3.8811490241801927e-57, 0.0199272353, -1.13756364e-07, 0.999801457)
+		end
+	})
+	Tab:AddButton({
+		Name = "Goku Ultra Instinct Quest",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			local GokuCF = game:GetService("Workspace").Misc.NPC.UltraTechniqueKarrotGiver.HumanoidRootPart.CFrame
+			Humrootpart.CFrame = GokuCF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Spawn",
+		Callback = function()
+			local Player = game:GetService("Players").LocalPlayer
+			local char = Player.Character
+			local Humrootpart = char.HumanoidRootPart
+			Humrootpart.CFrame = spawn3CF
+		end    
+	})
+	Tab:AddButton({
+		Name = "Quest Board",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1057.41357, 832.908142, 1593.66052, -0.994563818, -3.94622113e-08, 0.104128957, -3.68662754e-08, 1, 2.6854643e-08, -0.104128957, 2.28698092e-08, -0.994563818)
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Codes",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false,
+	})
+	Tab:AddTextbox({
+		Name = "Codes (Redeem!)",
+		Default = "",
+		TextDisappear = false,
+		Callback = function(Value)
+			local args = {
+				[1] = {
+					["UniqueTag"] = "RedeemCode",
+					["InputText"] = Value,
+					["InputType"] = "Text",
+					["LeftButton"] = "Redeem",
+					["Description"] = "Redeem Code",
+					["Prompt"] = "RedeemCode",
+					["RightButton"] = "Cancel",
+					["Title"] = "Codes"
+				},
+				[2] = "Redeem"
+			}
+			game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.PromptService.RE.Prompt:FireServer(unpack(args))
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Codes",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false,
+	})
+	Tab:AddTextbox({
+		Name = "Codes (Redeem!)",
+		Default = "",
+		TextDisappear = false,
+		Callback = function(Value)
+			local args = {
+				[1] = {
+					["UniqueTag"] = "RedeemCode",
+					["InputText"] = Value,
+					["InputType"] = "Text",
+					["LeftButton"] = "Redeem",
+					["Description"] = "Redeem Code",
+					["Prompt"] = "RedeemCode",
+					["RightButton"] = "Cancel",
+					["Title"] = "Codes"
+				},
+				[2] = "Redeem"
+			}
+			game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.PromptService.RE.Prompt:FireServer(unpack(args))
+		end
+	})
+	Tab:AddButton({
+		Name = "World Teleporter",
+		Callback = function()
+			game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1042.92664, 832.733704, 1388.02917, 0.861865282, -3.41834581e-11, -0.507137299, -7.3925871e-10, 1, -1.32375377e-09, 0.507137299, 1.51580304e-09, 0.861865282)
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Worlds",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	local Section = Tab:AddSection({
+		Name = "Click The Button To Be Teleported To That World"
+	})
+	Tab:AddButton({
+		Name = "Main World",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(3177438863)
+		end
+	})
+	Tab:AddButton({
+		Name = "Crimson Planet (Level 100 Required)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7040546583)
+		end
+	})
+	Tab:AddButton({
+		Name = "Planet Droid (Level 200 Required)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7888441249)
+		end
+	})
+	Tab:AddButton({
+		Name = "World Of Tournament (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(7379325123)
+		end
+	})
+	Tab:AddButton({
+		Name = "Battlegrounds (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(14516089806)
+		end
+	})
+	Tab:AddButton({
+		Name = "AFK World (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(18501029209)
+		end
+	})
+	Tab:AddButton({
+		Name = "Trade Hub (Script Wont Work Here!)",
+		Callback = function()
+			local teleportservice = game:GetService("TeleportService")
+			local gameID = game.PlaceId
+			teleportservice:Teleport(18408422178)
+		end
+	})
+	local Tab = Window:MakeTab({
+		Name = "Anti's",
+		Icon = "http://www.roblox.com/asset/?id=7734056608",
+		PremiumOnly = false
+	})     
+	Tab:AddToggle({
+		Name = "Anti Game Admins",
+		Default = false,
+		Save = true,
+		Flag = "antiadmins_db",
+		Callback = function(bool)
+			antiAdmins = bool
+			if bool == true then
+				game.Players.PlayerAdded:Connect(function(Plr)
+					if Plr:GetRankInGroup(3481335) and 2 <= Plr:GetRankInGroup(3481335) and antiAdmins then
+						game:GetService("Players").LocalPlayer:Kick("Admin/High Rank Player Detected")
+					end
+				end)
+			end
+		end
+	})
+	Tab:AddToggle({
+		Name = "Anti Kick/Ban",
+		Default = false,
+		Save = true,
+		Flag = "antikick_db",
+		Callback = function(Value)
+			AntiKick = Value
+			while AntiKick do
+				for i,v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetDescendants()) do
+					if v.Name == "ErrorPrompt" then
+						game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer)
+					end
+				end
+				game:GetService("RunService").PreRender:Wait()
+			end
+		end
+	})
+	Tab:AddButton({
+		Name = "Anti Afk",
+		Callback = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Chaosscripter/Riotscripter/main/Anti%20Afk"))();
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Esp",
+		Icon = "http://www.roblox.com/asset/?id=7733674079",
+		PremiumOnly = false
+	})
+	Tab:AddButton({
+		Name = "Esp Players",
+		Callback = function()
+			loadstring(game:HttpGet(("https://pastebin.com/raw/iRFj1ZfR"),true))();
+		end    
+	})
+	local Tab = Window:MakeTab({
+		Name = "Credits",
+		Icon = "http://www.roblox.com/asset/?id=4370318685",
+		PremiumOnly = false
+	})
+	Tab:AddLabel("Script is made by Riotscripter, Join the discord for support")  
+	Tab:AddButton({
+		Name = "Discord",
+		Callback = function()
+			setclipboard("https://discord.com/invite/EuHsTbKWhS")
+		end         
+	})
+	Tab:AddButton({
+		Name = "Youtube",
+		Callback = function()
+			setclipboard("https://m.youtube.com/channel/UCvXEiClhdiICCgSVzkEIT3A")
+		end
+	})
+	Tab:AddButton({
+		Name = "Github",
+		Callback = function()
+			setclipboard("https://github.com/Riotscripter")
+		end
+	})
+	Tab:AddBind({
+		Name = "UI Toggle Keybind", 
+		Default = Enum.KeyCode.RightShift, 
+		Hold = false, 
+		Callback = function()
+			print("pressed")
+		end    
+	})
+      OrionLib:Init()
+  end
+end);
