@@ -1,4 +1,4 @@
-spawn(function()loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/cute"))()end)
+spawn(function()loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/cute"))()end)
 
 
 

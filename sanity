@@ -1,13 +1,13 @@
 local l
 local g = game.GameId
 if g==4777817887 then --bladeball
-    l = "https://raw.githubusercontent.com/cracklua/cracks/m/sources/sanity/BladeBall"
+    l = "https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/sanity/BladeBall"
 elseif g==111958650 then --arsenal
-    l = "https://raw.githubusercontent.com/cracklua/cracks/m/sources/sanity/Arsenal"
+    l = "https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/sanity/Arsenal"
 elseif g==115797356 then --CounterBlox
-    l = "https://raw.githubusercontent.com/cracklua/cracks/m/sources/sanity/Counterblox"
+    l = "https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/sanity/Counterblox"
 elseif g==6035872082 then --Rivals
-    l = "https://raw.githubusercontent.com/cracklua/cracks/m/sources/sanity/Rivals"
+    l = "https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/sanity/Rivals"
 end
 if not l then print'game not supported ~25ms' 
 else 

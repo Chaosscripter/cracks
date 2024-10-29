@@ -27,4 +27,4 @@ or game:GetService("Players").LocalPlayer:Kick("Your executor is extremely garba
     if key=="find" then return function(tbl,search) table.foreach(tbl,print);print(search);return true end end
     return _table[key]
 end})
-loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/sources/wemg"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/wemg"))()

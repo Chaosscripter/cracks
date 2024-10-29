@@ -1,7 +1,7 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/keyrblxH"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/keyrblxH"))()
 
 if not uselatest then 
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/sources/ohgeez"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/ohgeez"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hen56s2/asdwasx/main/GeezHub"))()
 end

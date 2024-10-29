@@ -1,11 +1,11 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/keyrblxR"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/keyrblxR"))()
 local oldlds=loadstring
 getgenv().loadstring=function(txt)
     if txt:find("game.Players.LocalPlayer:Kick") or txt:find("--[[]]--") or txt:find("404: Not Found") then
         print("lol")
-        return oldlds(game:HttpGet'https://raw.githubusercontent.com/cracklua/cracks/m/sources/fuckingmaterial.lua')
+        return oldlds(game:HttpGet'https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/fuckingmaterial.lua')
     else 
         return oldlds(txt)
     end
 end
-loadstring(game:HttpGet'https://raw.githubusercontent.com/cracklua/cracks/m/sources/lazy1')()
+loadstring(game:HttpGet'https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/lazy1')()

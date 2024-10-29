@@ -1,5 +1,5 @@
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/sources/pitbull/Library/V5.lua"))()
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/sources/pitbull/Library/V4.lua"))()
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/pitbull/Library/V5.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/pitbull/Library/V4.lua"))()
 
 local Stats = game:GetService('Stats')
 
@@ -9,7 +9,7 @@ local RunService = game:GetService('RunService')
 
 local ReplicatedStorage = game:GetService('ReplicatedStorage')
 
-local Nurysium_Util = loadstring(game:HttpGet('https://raw.githubusercontent.com/cracklua/cracks/m/sources/pitbull/Scripts/Blade%20Ball.lua'))()
+local Nurysium_Util = loadstring(game:HttpGet('https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/pitbull/Scripts/Blade%20Ball.lua'))()
 
 local local_player = Players.LocalPlayer
 
@@ -948,7 +948,7 @@ UpdatePlayerDropdown()
 
 local Section = Tab7:AddSection({"Esp"})
 
-local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/sources/pitbull/Scripts/Esp.lua"))()
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/pitbull/Scripts/Esp.lua"))()
 
 ESP:Toggle(false)
 
@@ -1026,7 +1026,7 @@ local ReplicatedStorage = game:GetService('ReplicatedStorage')
 local local_player = Players.LocalPlayer
 local camera = workspace.CurrentCamera
 
-local Nurysium_Util = loadstring(game:HttpGet('https://raw.githubusercontent.com/cracklua/cracks/m/sources/pitbull/Scripts/Blade%20Ball.lua'))()
+local Nurysium_Util = loadstring(game:HttpGet('https://raw.githubusercontent.com/savinggracelua/cracks/m/sources/pitbull/Scripts/Blade%20Ball.lua'))()
 local closest_Entity = nil
 local connection
 

