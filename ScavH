@@ -1,1 +1,1 @@
-warn("removed until further notice")
+loadstring(game:HttpGet'https://raw.githubusercontent.com/savinggracelua/cracks/m/scav')()
