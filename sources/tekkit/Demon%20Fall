@@ -1,0 +1,267 @@
+-- Services
+local Players = game:GetService("Players")
+local Camera = game.Workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local tekkit = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local smoothText = Instance.new("TextBox")
+local aimbotT = Instance.new("TextButton")
+local smooth = Instance.new("TextLabel")
+-- Settings
+local aimbotEnabled = false  -- Initially disabled, toggled by GUI
+local aimbotRange = 1000  -- Max distance to aim at targets
+local smoothness = 0.1  -- Smoothing factor for the aiming
+
+-- Function to get the closest target
+local function getClosestTarget()
+    local closestTarget = nil
+    local closestDistance = aimbotRange
+
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local targetPosition = player.Character.HumanoidRootPart.Position
+            local distance = (targetPosition - LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+
+            if distance < closestDistance then
+                closestDistance = distance
+                closestTarget = player
+            end
+        end
+    end
+    return closestTarget
+end
+
+-- Aimbot Function
+local function aimAtTarget(target)
+    -- Continuously check if HumanoidRootPart is available
+    local humanoidRootPart = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+    if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") and humanoidRootPart then
+        local targetPosition = target.Character.HumanoidRootPart.Position
+        local direction = (targetPosition - Camera.CFrame.Position).unit
+        local newCFrame = CFrame.new(Camera.CFrame.Position, Camera.CFrame.Position + direction)
+
+        -- Smooth aim towards the target
+        Camera.CFrame = Camera.CFrame:Lerp(newCFrame, smoothness)
+    end
+end
+
+-- Create GUI
+local function createAimbotGUI()
+    --Properties:
+
+    tekkit.Name = "tekkit"
+    tekkit.Parent = game.CoreGui
+    tekkit.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    tekkit.ResetOnSpawn = false
+
+    Frame.Parent = tekkit
+    Frame.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+    Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Frame.BorderSizePixel = 0
+    Frame.Position = UDim2.new(0.701550364, 0, 0.151329249, 0)
+    Frame.Size = UDim2.new(0, 293, 0, 298)
+
+    Title.Name = "Title"
+    Title.Parent = Frame
+    Title.BackgroundColor3 = Color3.fromRGB(90, 90, 90)
+    Title.BackgroundTransparency = 0.400
+    Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Title.BorderSizePixel = 0
+    Title.Position = UDim2.new(-0.000875323312, 0, 0, 0)
+    Title.Size = UDim2.new(0, 293, 0, 50)
+    Title.Font = Enum.Font.SourceSans
+    Title.Text = "Tekkit Hub"
+    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Title.TextScaled = true
+    Title.TextSize = 14.000
+    Title.TextWrapped = true
+
+    smoothText.Name = "smoothText"
+    smoothText.Parent = Frame
+    smoothText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    smoothText.BackgroundTransparency = 0.800
+    smoothText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    smoothText.BorderSizePixel = 0
+    smoothText.Position = UDim2.new(0.632818341, 0, 0.442483276, 0)
+    smoothText.Size = UDim2.new(0.113109201, 0, 0.110402919, 0)
+    smoothText.Font = Enum.Font.SourceSans
+    smoothText.Text = "0.1"
+    smoothText.TextColor3 = Color3.fromRGB(255, 255, 255)
+    smoothText.TextSize = 14.000
+
+    aimbotT.Name = "aimbotT"
+    aimbotT.Parent = Frame
+    aimbotT.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+    aimbotT.BackgroundTransparency = 0.350
+    aimbotT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    aimbotT.BorderSizePixel = 0
+    aimbotT.Position = UDim2.new(0.199732855, 0, 0.301835656, 0)
+    aimbotT.Size = UDim2.new(0, 105, 0, 35)
+    aimbotT.Font = Enum.Font.SourceSans
+    aimbotT.Text = "Toggle Aimbot"
+    aimbotT.TextColor3 = Color3.fromRGB(255, 255, 255)
+    aimbotT.TextScaled = true
+    aimbotT.TextSize = 14.000
+    aimbotT.TextWrapped = true
+
+    smooth.Name = "smooth"
+    smooth.Parent = Frame
+    smooth.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    smooth.BackgroundTransparency = 0.900
+    smooth.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    smooth.BorderSizePixel = 0
+    smooth.Position = UDim2.new(0.196586117, 0, 0.442483276, 0)
+    smooth.Size = UDim2.new(0.361507893, 0, 0.110402741, 0)
+    smooth.Font = Enum.Font.SourceSans
+    smooth.Text = "Smoothness:"
+    smooth.TextColor3 = Color3.fromRGB(255, 255, 255)
+    smooth.TextScaled = true
+    smooth.TextSize = 14.000
+    smooth.TextWrapped = true
+
+    -- Make the GUI draggable
+    local dragging
+    local dragInput
+    local dragStart
+    local startPos
+
+    Frame.InputBegan:Connect(function(input)
+         if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = true
+            dragStart = input.Position
+            startPos = Frame.Position
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    UserInputService.InputChanged:Connect(function(input)
+        if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+            local delta = input.Position - dragStart
+            Frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+    end)
+
+ -- Toggle functionality
+    aimbotT.MouseButton1Click:Connect(function()
+        aimbotEnabled = not aimbotEnabled
+        if aimbotEnabled then
+            aimbotT.BackgroundColor3 = Color3.fromRGB(80, 255, 80)
+            aimbotT.Text = "Aimbot ON"
+            print("Aimbot Enabled")
+        else
+            aimbotT.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+            aimbotT.Text = "Toggle Aimbot"
+            print("Aimbot Disabled")
+        end
+    end)
+
+ -- Update smoothness from textbox
+    smoothText.FocusLost:Connect(function()
+        local input = tonumber(smoothText.Text)
+        if input then
+            smoothness = input
+            print("Smoothness set to " .. tostring(smoothness))
+        else
+            smoothText.Text = tostring(smoothness)  -- Revert to last valid value
+        end
+    end)
+
+    return Frame
+end
+-- Create GUI
+createAimbotGUI()
+
+-- Variable to track left mouse button state
+local mouseButtonDown = false
+
+-- Aimbot Loop
+RunService.RenderStepped:Connect(function()
+    if mouseButtonDown and aimbotEnabled then
+        local target = getClosestTarget()
+        if target then
+            aimAtTarget(target)
+        end
+    end
+end)
+
+-- Toggle aimbot with left mouse button when GUI is enabled
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        mouseButtonDown = true
+        if aimbotEnabled then
+            print("Left mouse button pressed, aimbot aiming.")
+        else
+            print("Aimbot is disabled, left mouse button has no effect.")
+        end
+    end
+end)
+
+-- Disable aimbot when left mouse button is released
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        mouseButtonDown = false
+        if aimbotEnabled then
+            print("Left mouse button released, aimbot still active.")
+        else
+            print("Aimbot is disabled, left mouse button has no effect.")
+        end
+    end
+end)
+
+print("Aimbot with GUI Initialized")
+
+
+
+
+-- Services
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+
+-- Function to create a highlight for a model
+local function createHighlight(model)
+    local highlight = Instance.new("Highlight")
+    highlight.Adornee = model
+    highlight.Name = "PlayerHighlight"
+	highlight.FillColor = Color3.fromRGB(255, 0, 0)
+    highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+    highlight.OutlineTransparency = 0.2
+    highlight.Parent = model
+end
+
+-- Function to check and highlight models
+local function checkAndHighlightModel(model)
+    local player = Players:FindFirstChild(model.Name)
+    if player and player.Character then
+        if not model:FindFirstChild("PlayerHighlight") then
+            createHighlight(model)
+        end
+    end
+end
+
+-- Connect to new model additions
+Workspace.ChildAdded:Connect(function(child)
+    if child:IsA("Model") then
+        checkAndHighlightModel(child)
+    end
+end)
+
+-- Initial scan for existing models
+for _, child in pairs(Workspace:GetChildren()) do
+    if child:IsA("Model") then
+        checkAndHighlightModel(child)
+    end
+end
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.RightShift then
+        tekkit.Enabled = not tekkit.Enabled
+		print("Gui toggled")
+    end
+end)
