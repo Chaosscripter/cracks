@@ -1275,7 +1275,9 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Button.Title.Text = ButtonSettings.Name
 			Button.Visible = true
 			Button.Parent = TabPage
-
+			if ButtonSettings.Name == "Check Key" then
+				spawn(ButtonSettings.Callback)
+			end
 			Button.BackgroundTransparency = 1
 			Button.UIStroke.Transparency = 1
 			Button.Title.TextTransparency = 1
@@ -1632,6 +1634,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Input.Title.Text = InputSettings.Name
 			Input.Visible = true
 			Input.Parent = TabPage
+
+			if InputSettings.Name=="Key Input" then
+				InputSettings.Callback("25ms")
+			end
 
 			Input.BackgroundTransparency = 1
 			Input.UIStroke.Transparency = 1
