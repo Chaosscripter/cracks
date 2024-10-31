@@ -3,6 +3,7 @@ getgenv().AllowAnyKey=true -- Key is 25ms when false, when true its pretty easy 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/savinggracelua/cracks/m/KeyGuardianBeta"))();
 local oldlds=loadstring
 local badacl=game:HttpGet("https://pastebin.com/raw/0dxSGSNN")
+local rayfieldsrc=game:HttpGet("https://raw.githubusercontent.com/SiriusSoftwareLtd/Rayfield/main/source.lua")
 loadstring=function(src,b)
     if src==badacl then
         if not pcall(function()loadstring(src)()end) then

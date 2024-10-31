@@ -1635,10 +1635,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Input.Visible = true
 			Input.Parent = TabPage
 
-			if InputSettings.Name=="Key Input" then
-				InputSettings.Callback("25ms")
-			end
-
 			Input.BackgroundTransparency = 1
 			Input.UIStroke.Transparency = 1
 			Input.Title.TextTransparency = 1
